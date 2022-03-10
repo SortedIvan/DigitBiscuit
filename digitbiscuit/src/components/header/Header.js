@@ -12,11 +12,6 @@ const Header = (props) => {
     const [title, setTitle] = React.useState("");
     const [color, setColor] = React.useState("#FF9300");
     
-
-    // function ChangeColor(event){
-    //     setColor(event.target.color);
-    // }
-
     function changeText(event){
         setText(event.target.value)
     }
@@ -47,12 +42,7 @@ const Header = (props) => {
         <br/>
         <FormControl>
         <FormLabel id="demo-controlled-radio-buttons-group">Card Color</FormLabel>
-            <RadioGroup value = {color} onChange = {(e) => setColor(e.target.value)}
-                // aria-labelledby="demo-controlled-radio-buttons-group"
-                // name="controlled-radio-buttons-group"
-                // value={color ? color: ""}
-                // onChange={ChangeColor}
-            >
+            <RadioGroup value = {color} onChange = {(e) => setColor(e.target.value)}>
             <FormControlLabel value="#FF9300" control={<Radio />} label="Orange" />
             <FormControlLabel value="#00A2FF" control={<Radio />} label="Blue" />
         </RadioGroup>

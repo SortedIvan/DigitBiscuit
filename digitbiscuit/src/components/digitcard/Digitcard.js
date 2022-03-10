@@ -34,10 +34,7 @@ const Digitcard = (props) => {
       setCanBeEdit(false)
     }
     
-    
-    // if(!cardID){
-    //   return null;
-    // }
+
     return (
     <Container sx={{ py: 1 }} maxWidth="md">
       <Draggable>
@@ -49,7 +46,6 @@ const Digitcard = (props) => {
           <Button onClick = {props.deleteFun} variant="text">Delete</Button>
           
           <span></span>
-          {/* <Typography onDoubleClick = {editTextValue} variant="h6">{text}</Typography> */}
           <Typography style = {{  color: 'White',
                   fontSize: 22,
                   fontWeight: 'bold',
