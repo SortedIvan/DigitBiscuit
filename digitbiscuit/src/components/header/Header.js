@@ -30,7 +30,7 @@ const Header = (props) => {
     }
 
     return (
-        <Container sx={{ py: 10 }} maxWidth="md">
+        <Container sx={{ py: 10 }} maxWidth="lg" style={{backgroundColor: "#75fab5"}}>
         <div>
         <Button onClick={createCard}>Create card</Button>
         <TextField id="outlined-basic" label="Title" onChange={changeText}></TextField>

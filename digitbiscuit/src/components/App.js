@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Digitcard text="Creating a header for the Trello clone!" bgColor="#FF9300" />
-        <Digitcard text="Not forgetting about writing a good explanation in each commit!" bgColor="#00A2FF" />
+        <Digitcard text="Creating a header for the Trello clone!" title = "RANDOM TITLE" bgColor="#FF9300" />
+        <Digitcard text="Not forgetting about writing a good explanation in each commit!" title = "ANOTHER RANDOM TITLE" bgColor="#00A2FF" />
         {cards.map((card) => (
           <Digitcard onDelete = {deleteCard} key = {card.card.title} text = {card.card.text} title = {card.card.title}bgColor ="#FF9300"/>
           ))}
