@@ -10,6 +10,14 @@ function App() {
       setCards(prevItems => [...prevItems, {card}]);
       console.log(cards)
   }
+
+  function deleteCard(id){
+    const newCards = [...cards];
+    const index = newCards.indexOf(id);
+    newCards.splice(index, 1);
+    setCards(newCards);
+}
+
   console.log(cards)
 
   return (
@@ -18,7 +26,7 @@ function App() {
         <Digitcard text="Creating a header for the Trello clone!" bgColor="#FF9300" />
         <Digitcard text="Not forgetting about writing a good explanation in each commit!" bgColor="#00A2FF" />
         {cards.map((card) => (
-          <Digitcard key = {card.card} text = {card.card} bgColor ="#FF9300"/>
+          <Digitcard onDelete = {deleteCard} key = {card.card.title} text = {card.card.text} title = {card.card.title}bgColor ="#FF9300"/>
           ))}
       </div>
       <div>
