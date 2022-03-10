@@ -6,6 +6,16 @@ import { RadioGroup } from '@material-ui/core';
 import { FormControlLabel } from '@material-ui/core';
 import { Radio } from '@material-ui/core';
 
+import styled from "styled-components";
+import { FaCookieBite } from 'react-icons/fa';
+const Logo = styled.a`
+padding: 1rem 0;
+color: #19bfb1;
+text-decoration: none;
+font-weight: 700;
+font-size: 1.7rem;`
+
+
 const Header = (props) => {
 
     const [text, setText] = React.useState("");
@@ -30,7 +40,9 @@ const Header = (props) => {
         <Container sx={{ py: 10 }} maxWidth="lg" style={
             {backgroundColor: "#75fab5", width: "300px", height: "400px"}}>
         
-        <Button onClick={createCard}>Create card</Button>
+        <p style = {{marginBottom : "20px"}}
+        className={"page-header"}><Logo><FaCookieBite/>Digit<span>biscuit</span></Logo></p>  
+        <Button onClick={createCard} variant="contained">Create card</Button>
         &nbsp;&nbsp;<br/>
         <TextField  id="outlined-basic" label="Title" onChange={changeText}></TextField>
         &nbsp;&nbsp;
@@ -47,6 +59,7 @@ const Header = (props) => {
             <FormControlLabel value="#00A2FF" control={<Radio />} label="Blue" />
         </RadioGroup>
         </FormControl>
+        
         
         </Container>
     );

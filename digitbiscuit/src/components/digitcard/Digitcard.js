@@ -46,6 +46,16 @@ const Digitcard = (props) => {
           <Button onClick = {props.deleteFun} variant="text">Delete</Button>
           
           <span></span>
+
+                  {
+            canBeEdit == true
+            ?<>
+            <Button onClick = {onConfirmEditCard}>Confirm</Button>
+            <TextField onChange = {editTitleValue} id="outlined-basic" label="Title" >{props.text}</TextField>
+            <TextField onChange = {editTextValue} id="outlined-basic" label="Text" >{props.title}</TextField>
+            </>
+            :
+            <>
           <Typography style = {{  color: 'White',
                   fontSize: 22,
                   fontWeight: 'bold',
@@ -55,15 +65,10 @@ const Digitcard = (props) => {
                   fontSize: 18,
                   fontFamily: 'Trebuchet MS',}}
                   onDoubleClick={editEnable}>{props.title}</div>
-                  {
-            canBeEdit == true
-            ?<>
-            <Button onClick = {onConfirmEditCard}>Confirm</Button>
-            <TextField onChange = {editTitleValue} id="outlined-basic" label="Title" ></TextField>
-            <TextField onChange = {editTextValue} id="outlined-basic" label="Text" ></TextField>
-            </>
-            :
-            <>
+
+
+
+
             </>
                 
           }
