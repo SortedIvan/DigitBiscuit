@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { FaCookieBite } from 'react-icons/fa';
 const Logo = styled.a`
 padding: 1rem 0;
-color: #19bfb1;
+color: black;
 text-decoration: none;
 font-weight: 700;
 font-size: 1.7rem;`
@@ -32,16 +32,15 @@ const Header = (props) => {
 
     function createCard(){
         const card = {text : text, title : title, bgColor : color, cardID: Math. floor(Math. random() * 100)}
-        // props.changeCard(text, title)
         props.changeCard(card)
     }
 
     return (
         <Container sx={{ py: 10 }} maxWidth="lg" style={
-            {backgroundColor: "#75fab5", width: "300px", height: "400px"}}>
+            {backgroundColor: "#d4d4d4", width: "300px", height: "450px",outlineStyle: "groove"}}>
         
         <p style = {{marginBottom : "20px"}}
-        className={"page-header"}><Logo><FaCookieBite/>Digit<span>biscuit</span></Logo></p>  
+        className={"page-header"}><Logo><FaCookieBite color='#bd7040'/>Digit<span>biscuit</span></Logo></p>  
         <Button onClick={createCard} variant="contained">Create card</Button>
         &nbsp;&nbsp;<br/>
         <TextField  id="outlined-basic" label="Title" onChange={changeText}></TextField>
@@ -52,11 +51,13 @@ const Header = (props) => {
         <br/>
         <br/>
         <br/>
+        {/* #f03232 */}
         <FormControl>
         <FormLabel id="demo-controlled-radio-buttons-group">Card Color</FormLabel>
             <RadioGroup value = {color} onChange = {(e) => setColor(e.target.value)}>
             <FormControlLabel value="#FF9300" control={<Radio />} label="Orange" />
-            <FormControlLabel value="#00A2FF" control={<Radio />} label="Blue" />
+            <FormControlLabel value="#00A2FF" control={<Radio />} label="Blue" /> 
+            <FormControlLabel value="#f03232" control={<Radio />} label="Red" /> 
         </RadioGroup>
         </FormControl>
         
