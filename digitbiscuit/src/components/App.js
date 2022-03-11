@@ -9,7 +9,8 @@ function App() {
       setCards(prevItems => [...prevItems, {card}]);
       console.log(cards)
   }
-
+  // We map through the list of cards and upon matching the id of the required card,
+  // we are now able to edit it and update its information
   function editCard(card) {
     const updatedCards = [...cards].map((item) => {
       if (item.card.cardID === card.cardID) {
@@ -20,7 +21,7 @@ function App() {
     });
     setCards(updatedCards);
   }
-
+  // Similarly to editCard, we now filter the list of the cards based on their ID's
   const deleteCard = (cardID) => {
      setCards(cards.filter(item => item.card.cardID !== cardID));
    };
