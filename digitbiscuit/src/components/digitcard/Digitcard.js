@@ -10,6 +10,17 @@ const Digitcard = (props) => {
     const [editText, setEditText] = React.useState("");
     const [editTitle, setEditTitle] = React.useState("");
     const [canBeEdit, setCanBeEdit] = React.useState(false);
+    const [cursor, setCursor] = React.useState('crosshair');
+
+    const changeCursor = () => {
+    setCursor(prevState => {
+      console.log(prevState)
+      if(prevState === 'grabbing'){
+        return 'grab';
+      }
+      return 'grabbing';
+    });
+  }
     React.useEffect(() => {
       setCanBeEdit(false)
     }, []);
@@ -28,8 +39,8 @@ const Digitcard = (props) => {
     function onConfirmEditCard(){
       const card = {
         cardID: props.cardID,
-        text: editText,
-        title: editTitle
+        text: editTitle,
+        title: editText
       };
       console.log(props.cardID + "CARD ID ON CONFRIM CARD")
       console.log(card)
@@ -40,9 +51,9 @@ const Digitcard = (props) => {
     return (
     <Container sx={{ py: 1 }} maxWidth="md">
       <Draggable>
-        <Card
+        <Card onClick={changeCursor}
           style={{ width: "300px", backgroundColor: props.bgColor, height : "200px", color: "#ffffff",
-          display: "flex", justifyContent: "top", flexDirection: "column", 
+          display: "flex", justifyContent: "top", flexDirection: "column", cursor : cursor
           }}
         >
           <Button onClick = {props.deleteFun} variant="text">Delete</Button>
