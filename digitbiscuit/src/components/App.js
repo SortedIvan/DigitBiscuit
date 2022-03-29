@@ -2,6 +2,7 @@ import "./styles.css";
 import Digitcard from "./digitcard/Digitcard";
 import Header from "./header/Header";
 import React from "react";
+import InstructionDigitcard from "./digitcard/InstructionDigitcard";
 function App() {
 
   const [cards, setCards] = React.useState([]);
@@ -31,8 +32,8 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Digitcard  text="Welcome to DigitBiscuit!" title = "Create your sticky notes and drag them around!" bgColor="#FF9300" />
-        <Digitcard text="Instructions" title = "To edit a card, simply double click on its text. I'm not editable!" bgColor="#00A2FF" />
+        <InstructionDigitcard  text="Welcome to DigitBiscuit!" title = "Create your sticky notes and drag them around!" bgColor="#FF9300" />
+        <InstructionDigitcard text="Instructions" title = "To edit a card, simply double click on its text. I'm not editable!" bgColor="#00A2FF" />
         {cards.map((card) => (
           <Digitcard cardID = {card.card.cardID} editCard = {editCard}deleteFun = {() => deleteCard(card.card.cardID)} key = {card.card.title} text = {card.card.text} title = {card.card.title}bgColor ={card.card.bgColor}/>
           ))}
