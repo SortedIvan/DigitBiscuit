@@ -10,7 +10,7 @@ const Digitcard = (props) => {
     const [editText, setEditText] = React.useState("");
     const [editTitle, setEditTitle] = React.useState("");
     const [canBeEdit, setCanBeEdit] = React.useState(false);
-    const [cursor, setCursor] = React.useState('crosshair');
+    const [cursor, setCursor] = React.useState('grab');
 
     const changeCursor = () => {
     setCursor(prevState => {
