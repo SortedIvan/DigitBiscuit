@@ -71,7 +71,7 @@ const Digitcard = (props) => {
                       fontSize: 22,
                       fontWeight: 'bold',
                       fontFamily: 'Trebuchet MS',}} 
-                      variant="h9">{props.text}</Typography> 
+                      variant="h6">{props.text}</Typography> 
               <div  style = {{  color: 'white',
                       fontSize: 18,
                       fontFamily: 'Trebuchet MS',}}
